@@ -3,7 +3,7 @@ League of Legends' client tools who automate some basic functions such as going 
 # Your league resolution MUST BE 1024x576
 
 # Patch 1.2 notes
-[Download Link for 64bits](https://github.com/godofloli/LeagueClientAutoTool/raw/master/LeagueClientAutoTool%20x64.exe) | [Download Link for 32bits](https://github.com/godofloli/LeagueClientAutoTool/raw/master/LeagueClientAutoTool%20x86.exe)
+[Download Link for 64bits](https://github.com/godofloli/LeagueClientAutoTool/raw/Dl/LeagueClientAutoTool_x64.rar) | [Download Link for 32bits](https://github.com/godofloli/LeagueClientAutoTool/raw/Dl/LeagueClientAutoTool_x86.rar)
 
 - Added a Ping Test for Most Regions .
 - Fixed many bugs .
