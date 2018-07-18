@@ -1,5 +1,6 @@
 # LeagueClientAutoTool
 League of Legends' client tools who automate some basic functions such as going in Queue or claiming lane in BlindPick
+Official website link : http://www.leagueclientautotool.ml
 # Your league resolution MUST BE 1024x576
 
 # Patch 1.2 notes
