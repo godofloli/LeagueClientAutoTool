@@ -6,7 +6,7 @@ Official website link : http://www.leagueclientautotool.ml
 
 # Patch 1.3 notes
 
-[Download Link](https://github.com/godofloli/LeagueClientAutoTool/raw/Dl/LeagueClientAutoTool_1_3.rar)
+[Download Link](https://github.com/godofloli/LeagueClientAutoTool/raw/Dl/LeagueClientAutoTool%201.3.rar)
 
 - Changed the systems from coords clicks to image detection.
 - Added auto accept while in queue.
