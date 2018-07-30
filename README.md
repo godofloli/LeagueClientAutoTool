@@ -3,8 +3,21 @@ League of Legends' client tools who automate some basic functions such as going 
 Official website link : http://www.leagueclientautotool.ml
 # Your league resolution MUST BE 1024x576
 
+
+# Patch 1.3 notes
+
+[Download Link](https://github.com/godofloli/LeagueClientAutoTool/raw/Dl/LeagueClientAutoTool 1.3.rar)
+
+- Changed the systems from coords clicks to image detection.
+- Added auto accept while in queue.
+- Added auto queue launching : automtically joins queue (Blind Pick/Draft Pick) .
+- Auto lane picking for draftpick.
+- Auto lane claiming for blindpick.
+- Champion Ban & Pick are all done automatically for both blind pick & draft pick.
+- Can work as a leaver buster remover.
+- You don't have to stay next to your pc till the game starts.
+
 # Patch 1.2 notes
-[Download Link for 64bits](https://github.com/godofloli/LeagueClientAutoTool/raw/Dl/LeagueClientAutoTool_x64.rar) | [Download Link for 32bits](https://github.com/godofloli/LeagueClientAutoTool/raw/Dl/LeagueClientAutoTool_x86.rar)
 
 - Added a Ping Test for Most Regions .
 - Fixed many bugs .
