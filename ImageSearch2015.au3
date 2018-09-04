@@ -16,35 +16,27 @@ Local $h_ImageSearchDLL = -1; Will become Handle returned by DllOpen() that will
 Local $bTesting = false; Change to TRUE to turn on testing/example
 
 If $bTesting Then
-	cr(">" & "_ImageSearchStartup()=" & _ImageSearchStartup(), 2)
 	OnAutoItExitRegister(_ImageSearchShutdown)
 
-	cr("!Testing...")
 	;using Notepad as a simple example
 	#Region Notepad Snapshot Creation
 	$hWin = WinGetHandle("[CLASS:Notepad]")
 	If Not IsHWnd($hWin) Then
-		If Run("notepad.exe") = 0 Then cr("Couldn't run notepad.exe")
 		Local $hWin = WinWait("[CLASS:Notepad]", "", 10)
-		If $hWin = 0 Then cr("Notepad WinWait Timeout!")
 	EndIf
 	WinSetState($hWin, "", @SW_RESTORE)
 	WinSetState($hWin, "", @SW_SHOW)
 	WinActivate($hWin)
 	Local $testimage = "24bit.bmp"
 	_ScreenCapture_CaptureWnd($testimage, $hWin, 0, 0, -1, -1, False);_ScreenCapture_CaptureWnd ( $sFileName, $hWnd [, $iLeft = 0 [, $iTop = 0 [, $iRight = -1 [, $iBottom = -1 [, $bCursor = True]]]]] )
-	cr("made Notepad Window screenshot")
 	#EndRegion Notepad Snapshot Creation
 
 	#Region Test if application appeared
 	Local $y = 0, $x = 0, $result
 	$result = _ImageSearch($testimage, 1, $x, $y, 0, 0);_ImageSearch($findImage, $resultPosition, ByRef $x, ByRef $y, $tolerance, $transparency = 0)
 	If $result = 1 Then
-		cr("! $result=" & $result, 1)
 		MouseMove($x, $y, 0)
-		cr("+" & "recognised notepad! moved mouse to center of notepad!")
 	Else
-		cr("! $result=" & $result, 1)
 		Exit
 	EndIf
 	#EndRegion Test if application appeared
@@ -54,15 +46,10 @@ If $bTesting Then
 	Local $y = 0, $x = 0, $result
 	$result = _ImageSearch($testimage, 1, $x, $y, 0, 0);_ImageSearch($findImage, $resultPosition, ByRef $x, ByRef $y, $tolerance, $transparency = 0)
 	If $result = 1 Then
-		cr("! $result=" & $result, 1)
 		Exit
 	Else
-		cr("! $result=" & $result, 1)
-		cr("+" & "notepad dissapeared!")
 	EndIf
 	#EndRegion Test if application vanished
-	cr()
-	cr("!Test finished")
 EndIf
 
 #EndRegion TESTING/Example
@@ -73,11 +60,9 @@ Func _ImageSearchStartup()
 	$sOSArch = @OSArch ;Check if running on x64 or x32 Windows ;@OSArch Returns one of the following: "X86", "IA64", "X64" - this is the architecture type of the currently running operating system.
 	$sAutoItX64 = @AutoItX64 ;Check if using x64 AutoIt ;@AutoItX64 Returns 1 if the script is running under the native x64 version of AutoIt.
 	If $sOSArch = "X86" Or $sAutoItX64 = 0 Then
-		cr("+>" & "@OSArch=" & $sOSArch & @TAB & "@AutoItX64=" & $sAutoItX64 & @TAB & "therefore using x32 ImageSearch DLL")
 		$h_ImageSearchDLL = DllOpen("ImageSearchDLLx32.dll")
 		If $h_ImageSearchDLL = -1 Then Return "DllOpen failure"
 	ElseIf $sOSArch = "X64" And $sAutoItX64 = 1 Then
-		cr("+>" & "@OSArch=" & $sOSArch & @TAB & "@AutoItX64=" & $sAutoItX64 & @TAB & "therefore using x64 ImageSearch DLL")
 		$h_ImageSearchDLL = DllOpen("ImageSearchDLLx64.dll")
 		If $h_ImageSearchDLL = -1 Then Return "DllOpen failure"
 	Else
@@ -89,7 +74,6 @@ EndFunc   ;==>_ImageSearchStartup
 Func _ImageSearchShutdown()
 	DllClose($h_ImageSearchDLL)
 	_WinAPI_Wow64EnableWow64FsRedirection(False)
-	cr(">" & "_ImageSearchShutdown() completed")
 	Return True
 EndFunc   ;==>_ImageSearchShutdown
 #EndRegion ImageSearch Startup/Shutdown
@@ -225,22 +209,3 @@ Func _WaitForImagesSearch($findImage, $waitSecs, $resultPosition, ByRef $x, ByRe
 	Return False
 EndFunc   ;==>_WaitForImagesSearch
 #EndRegion ImageSearch UDF;slightly modified
-
-#Region My Custom ConsoleWrite/debug Function
-Func cr($text = "", $addCR = 1, $printTime = False) ;Print to console
-	Static $sToolTip
-	If Not @Compiled Then
-		If $printTime Then ConsoleWrite(@HOUR & ":" & @MIN & ":" & @SEC & ":" & @MSEC & " ")
-		ConsoleWrite($text)
-		If $addCR >= 1 Then ConsoleWrite(@CR)
-		If $addCR = 2 Then ConsoleWrite(@CR)
-	Else
-		If $printTime Then $sToolTip &= @HOUR & ":" & @MIN & ":" & @SEC & ":" & @MSEC & " "
-		$sToolTip &= $text
-		If $addCR >= 1 Then $sToolTip &= @CR
-		If $addCR = 2 Then $sToolTip &= @CR
-		ToolTip($sToolTip)
-	EndIf
-	Return $text
-EndFunc   ;==>cr
-#EndRegion My Custom ConsoleWrite/debug Function
