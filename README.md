@@ -4,9 +4,21 @@ Official website link : http://www.leagueclientautotool.ml
 # Your league resolution MUST BE 1024x576
 
 
+# Patch 3.0 notes
+
+  [Download Link](https://github.com/godofloli/LeagueClientAutoTool/raw/Dl/LeagueClientAutoTool%201.3.rar)
+  
+  
+  - New GUI design .
+  - Supports French language now .
+  - Updated the autoLogin .
+  - Added autoAccept matchmaking option .
+  - Fix of many bugs .
+  
+
 # Patch 1.3 notes
 
-[Download Link](https://github.com/godofloli/LeagueClientAutoTool/raw/Dl/LeagueClientAutoTool%201.3.rar)
+
 
 - Changed the systems from coords clicks to image detection.
 - Added auto accept while in queue.
