@@ -6,7 +6,7 @@ Official website link : http://www.leagueclientautotool.ga
 
 # Patch 3.1 notes
 
-  [Download Link](https://github.com/godofloli/LeagueClientAutoTool/archive/master.zip)
+  [Download Link](https://github.com/godofloli/LeagueClientAutoTool/files/3293077/LeagueClientAutoTool-3.1.zip)
   
   
   - Back to the old GUI design .
