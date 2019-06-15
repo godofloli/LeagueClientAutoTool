@@ -1,13 +1,24 @@
 # LeagueClientAutoTool
 League of Legends' client tools who automate some basic functions such as going in Queue or claiming lane in BlindPick
-Official website link : http://www.leagueclientautotool.ml
+Official website link : http://www.leagueclientautotool.ga
 # Your league resolution MUST BE 1024x576
 
 
-# Patch 3.0 notes
+# Patch 3.1 notes
 
   [Download Link](https://github.com/godofloli/LeagueClientAutoTool/archive/master.zip)
   
+  
+  - Back to the old GUI design .
+  - No longer Supports French language  .
+  - Removed the autoLogin .
+  - Updated common bugs with auto picking champions .
+  - Added the new champions (Sylas , Yuumi & Neeko) .
+  - To avoid all bugs you have to replace the screenshots in the all image folder with your own!
+
+# Patch 3.0 notes
+
+
   
   - New GUI design .
   - Supports French language now .
